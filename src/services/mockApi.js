@@ -14,7 +14,7 @@ function delay(ms = SIMULATED_DELAY) {
  */
 export async function fetchTransactions() {
   await delay();
-  const stored = localStorage.getItem('aurum_transactions');
+  const stored = localStorage.getItem('coinpath_transactions');
   if (stored) {
     return JSON.parse(stored);
   }
@@ -32,7 +32,7 @@ export async function addTransaction(transaction) {
     id: 'txn_' + Date.now().toString(36),
   };
   const updated = [newTransaction, ...transactions];
-  localStorage.setItem('aurum_transactions', JSON.stringify(updated));
+  localStorage.setItem('coinpath_transactions', JSON.stringify(updated));
   return updated;
 }
 
@@ -45,7 +45,7 @@ export async function updateTransaction(id, data) {
   const updated = transactions.map(t =>
     t.id === id ? { ...t, ...data } : t
   );
-  localStorage.setItem('aurum_transactions', JSON.stringify(updated));
+  localStorage.setItem('coinpath_transactions', JSON.stringify(updated));
   return updated;
 }
 
@@ -56,7 +56,7 @@ export async function deleteTransaction(id) {
   await delay(200);
   const transactions = await fetchTransactions();
   const updated = transactions.filter(t => t.id !== id);
-  localStorage.setItem('aurum_transactions', JSON.stringify(updated));
+  localStorage.setItem('coinpath_transactions', JSON.stringify(updated));
   return updated;
 }
 
@@ -65,6 +65,6 @@ export async function deleteTransaction(id) {
  */
 export async function resetTransactions() {
   await delay(100);
-  localStorage.removeItem('aurum_transactions');
+  localStorage.removeItem('coinpath_transactions');
   return [...mockTransactions];
 }

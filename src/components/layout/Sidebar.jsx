@@ -41,7 +41,7 @@ export default function Sidebar() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-charcoal-900 dark:text-white tracking-tight">
-                Aurum
+                Coinpath
               </h1>
               <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-charcoal-700/40 dark:text-slate-500">
                 Wealth Suite

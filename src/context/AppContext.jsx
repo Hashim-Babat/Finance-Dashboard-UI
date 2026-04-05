@@ -15,7 +15,7 @@ const initialFilters = {
 const initialState = {
   transactions: [],
   filters: initialFilters,
-  role: localStorage.getItem('aurum_role') || ROLES.ADMIN,
+  role: localStorage.getItem('coinpath_role') || ROLES.ADMIN,
   isLoading: true,
   error: null,
   sidebarOpen: false,
@@ -60,7 +60,7 @@ function appReducer(state, action) {
     case ACTIONS.RESET_FILTERS:
       return { ...state, filters: initialFilters };
     case ACTIONS.SET_ROLE:
-      localStorage.setItem('aurum_role', action.payload);
+      localStorage.setItem('coinpath_role', action.payload);
       return { ...state, role: action.payload };
     case ACTIONS.SET_LOADING:
       return { ...state, isLoading: action.payload };

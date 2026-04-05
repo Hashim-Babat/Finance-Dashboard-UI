@@ -1,4 +1,4 @@
-# Aurum — Finance Dashboard
+# Coinpath — Finance Dashboard
 
 A premium, interactive finance dashboard built with **React**, **Vite**, **Tailwind CSS**, and **Recharts**. Track income, expenses, and financial insights with a beautiful, responsive interface.
 

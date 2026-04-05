@@ -4,7 +4,7 @@ const ThemeContext = createContext(undefined);
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem('aurum_theme');
+    const stored = localStorage.getItem('coinpath_theme');
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
@@ -16,7 +16,7 @@ export function ThemeProvider({ children }) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('aurum_theme', theme);
+    localStorage.setItem('coinpath_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
