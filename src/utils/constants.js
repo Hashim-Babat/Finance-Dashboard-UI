@@ -107,8 +107,8 @@ export const MONTHS = [
 ];
 
 export const USER_PROFILE = {
-  name: 'James Morgan',
-  initials: 'JM',
+  name: 'Hashim Babat',
+  initials: 'HB',
   plan: 'Pro Plan',
   avatar: null,
 };
