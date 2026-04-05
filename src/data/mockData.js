@@ -5,7 +5,11 @@ import { CATEGORIES, TRANSACTION_TYPES } from '../utils/constants';
  */
 export const mockTransactions = [
   // ── April 2026 ──
+  { id: 'txn_072', date: '2026-04-05', description: 'RCB Jersey Kit', amount: 249.00, category: CATEGORIES.SHOPPING, type: TRANSACTION_TYPES.EXPENSE, notes: 'Official IPL merchandise' },
+  { id: 'txn_073', date: '2026-04-04', description: 'LPG Cylinder', amount: 303.50, category: CATEGORIES.BILLS, type: TRANSACTION_TYPES.EXPENSE, notes: 'Monthly gas refill' },
+  { id: 'txn_074', date: '2026-04-04', description: 'IPL Ticket', amount: 150.00, category: CATEGORIES.ENTERTAINMENT, type: TRANSACTION_TYPES.EXPENSE, notes: 'RCB vs CSK — Chinnaswamy Stadium' },
   { id: 'txn_001', date: '2026-04-03', description: 'Apple Inc. — Buy', amount: 2340.00, category: CATEGORIES.INVESTMENTS, type: TRANSACTION_TYPES.EXPENSE, notes: 'AAPL · 12 shares' },
+  { id: 'txn_075', date: '2026-04-02', description: 'Freelance — Video Editing', amount: 2500.00, category: CATEGORIES.FREELANCE, type: TRANSACTION_TYPES.INCOME, notes: 'Project payment' },
   { id: 'txn_002', date: '2026-04-02', description: 'Jiohotsar Subscription', amount: 15.99, category: CATEGORIES.ENTERTAINMENT, type: TRANSACTION_TYPES.EXPENSE, notes: 'Recurring bill' },
   { id: 'txn_003', date: '2026-04-01', description: 'Dividend Payment', amount: 480.00, category: CATEGORIES.DIVIDENDS, type: TRANSACTION_TYPES.INCOME, notes: 'Quarterly income' },
   { id: 'txn_004', date: '2026-04-01', description: 'Monthly Salary', amount: 8500.00, category: CATEGORIES.SALARY, type: TRANSACTION_TYPES.INCOME, notes: 'April paycheck' },
