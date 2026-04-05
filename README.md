@@ -2,6 +2,8 @@
 
 A premium, interactive finance dashboard built with **React**, **Vite**, **Tailwind CSS**, and **Recharts**. Track income, expenses, and financial insights with a beautiful, responsive interface.
 
+**🚀 Live Demo:** [https://finance-dashboard-ui-gamma-woad.vercel.app/](https://finance-dashboard-ui-gamma-woad.vercel.app/)
+
 ---
 
 ## 🖼️ Preview
