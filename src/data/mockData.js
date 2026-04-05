@@ -94,13 +94,33 @@ export const mockTransactions = [
  * Monthly balance trend data for the line chart
  */
 export const balanceTrendData = [
-  { month: 'Oct', balance: 98500, income: 17000, expenses: 5412 },
-  { month: 'Nov', balance: 104800, income: 18800, expenses: 4918 },
-  { month: 'Dec', balance: 109200, income: 11410, expenses: 3362 },
-  { month: 'Jan', balance: 112500, income: 20690, expenses: 4977 },
-  { month: 'Feb', balance: 117800, income: 10320, expenses: 4618 },
-  { month: 'Mar', balance: 120500, income: 20200, expenses: 6245 },
-  { month: 'Apr', balance: 124850, income: 8980, expenses: 2578 },
+  // ── 2024 ──
+  { month: 'Apr 24', balance: 52000, income: 8500, expenses: 4100 },
+  { month: 'May 24', balance: 55800, income: 9200, expenses: 5400 },
+  { month: 'Jun 24', balance: 59100, income: 8800, expenses: 5500 },
+  { month: 'Jul 24', balance: 62400, income: 9500, expenses: 6200 },
+  { month: 'Aug 24', balance: 65900, income: 10000, expenses: 6500 },
+  { month: 'Sep 24', balance: 69200, income: 9800, expenses: 6500 },
+  { month: 'Oct 24', balance: 73500, income: 11500, expenses: 7200 },
+  { month: 'Nov 24', balance: 78200, income: 12000, expenses: 7300 },
+  { month: 'Dec 24', balance: 82100, income: 10500, expenses: 6600 },
+  { month: 'Jan 25', balance: 85800, income: 12500, expenses: 8800 },
+  { month: 'Feb 25', balance: 88500, income: 9800, expenses: 7100 },
+  { month: 'Mar 25', balance: 91200, income: 10200, expenses: 7500 },
+  { month: 'Apr 25', balance: 93500, income: 9500, expenses: 7200 },
+  { month: 'May 25', balance: 95100, income: 9800, expenses: 8200 },
+  { month: 'Jun 25', balance: 96800, income: 10200, expenses: 8500 },
+  { month: 'Jul 25', balance: 95200, income: 8500, expenses: 10100 },
+  { month: 'Aug 25', balance: 96500, income: 10500, expenses: 9200 },
+  { month: 'Sep 25', balance: 97800, income: 9800, expenses: 8500 },
+  // ── Oct 2025 – Apr 2026 (original data) ──
+  { month: 'Oct 25', balance: 98500, income: 17000, expenses: 5412 },
+  { month: 'Nov 25', balance: 104800, income: 18800, expenses: 4918 },
+  { month: 'Dec 25', balance: 109200, income: 11410, expenses: 3362 },
+  { month: 'Jan 26', balance: 112500, income: 20690, expenses: 4977 },
+  { month: 'Feb 26', balance: 117800, income: 10320, expenses: 4618 },
+  { month: 'Mar 26', balance: 120500, income: 20200, expenses: 6245 },
+  { month: 'Apr 26', balance: 124850, income: 8980, expenses: 2578 },
 ];
 
 /**

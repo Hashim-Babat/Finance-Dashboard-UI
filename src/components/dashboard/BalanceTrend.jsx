@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Card from '../common/Card';
 import { balanceTrendData } from '../../data/mockData';
 import { formatCurrency } from '../../utils/formatters';
 import { useTheme } from '../../context/ThemeContext';
 
-const timeRanges = ['6M', '1Y', 'All'];
+const timeRanges = ['1M', '3M', '6M', '1Y', 'All'];
+
+const rangeConfig = {
+  '1M': { slice: 2, label: '1-month overview' },
+  '3M': { slice: 4, label: '3-month overview' },
+  '6M': { slice: 7, label: '6-month overview' },
+  '1Y': { slice: 13, label: '1-year overview' },
+  'All': { slice: 0, label: 'All-time overview' },
+};
 
 function CustomTooltip({ active, payload, label }) {
   if (!active || !payload || !payload.length) return null;
@@ -30,6 +38,14 @@ export default function BalanceTrend() {
   const gradientStart = isDark ? 'rgba(20, 184, 166, 0.3)' : 'rgba(13, 148, 136, 0.15)';
   const gradientEnd = isDark ? 'rgba(20, 184, 166, 0.0)' : 'rgba(13, 148, 136, 0.0)';
 
+  const chartData = useMemo(() => {
+    const config = rangeConfig[activeRange];
+    if (config.slice === 0) return balanceTrendData;
+    return balanceTrendData.slice(-config.slice);
+  }, [activeRange]);
+
+  const subtitle = rangeConfig[activeRange].label;
+
   return (
     <Card className="animate-slide-up" style={{ animationDelay: '400ms', animationFillMode: 'both' }}>
       {/* Header */}
@@ -39,7 +55,7 @@ export default function BalanceTrend() {
             Portfolio Performance
           </h3>
           <p className="text-xs text-charcoal-700/50 dark:text-slate-500 mt-0.5">
-            6-month overview · Updated just now
+            {subtitle} · Updated just now
           </p>
         </div>
 
@@ -63,10 +79,10 @@ export default function BalanceTrend() {
         </div>
       </div>
 
-      {/* Chart */}
+      {/* Chart — fixed height container */}
       <div className="h-[280px] mt-4 -ml-2">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={balanceTrendData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+          <AreaChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="balanceGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor={gradientStart} />
@@ -78,8 +94,9 @@ export default function BalanceTrend() {
               dataKey="month"
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: textColor }}
+              tick={{ fontSize: 11, fill: textColor }}
               dy={10}
+              interval={chartData.length > 13 ? 2 : 0}
             />
             <YAxis
               axisLine={false}
@@ -95,7 +112,7 @@ export default function BalanceTrend() {
               stroke={strokeColor}
               strokeWidth={2.5}
               fill="url(#balanceGradient)"
-              dot={{ r: 4, fill: strokeColor, strokeWidth: 2, stroke: isDark ? '#0f1724' : '#fff' }}
+              dot={chartData.length <= 13 ? { r: 4, fill: strokeColor, strokeWidth: 2, stroke: isDark ? '#0f1724' : '#fff' } : false}
               activeDot={{ r: 6, fill: strokeColor, strokeWidth: 3, stroke: isDark ? '#0f1724' : '#fff' }}
             />
           </AreaChart>
@@ -104,3 +121,4 @@ export default function BalanceTrend() {
     </Card>
   );
 }
+
